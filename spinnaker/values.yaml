@@ -18,6 +18,9 @@ halyard:
   additionalConfigMaps:
     create: false
     data: {}
+  persistence:
+    storageClass: gluster-heketi
+
 
 # Define which registries and repositories you want available in your
 # Spinnaker pipeline definitions
@@ -104,6 +107,9 @@ redis:
   nodeSelector: {}
   cluster:
     enabled: false
+  master:
+    persistence:
+      storageClass: gluster-heketi
 # Uncomment if you don't want to create a PVC for redis
 #  master:
 #    persistence:
@@ -119,6 +125,8 @@ minio:
   secretKey: spinnakeradmin
   bucket: "spinnaker"
   nodeSelector: {}
+  persistence:
+    storageClass: gluster-heketi
 # Uncomment if you don't want to create a PVC for minio
 #  persistence:
 #    enabled: false

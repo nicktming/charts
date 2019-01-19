@@ -120,6 +120,7 @@ spec:
 {{ include "spinnaker.standard-labels" . | indent 8 }}
     spec:
       accessModes: [ "ReadWriteOnce" ]
+      storageClassName: {{ .Values.halyard.persistence.storageClass | quote }}
       resources:
         requests:
           storage: 10Gi
