@@ -19,7 +19,7 @@ halyard:
     create: false
     data: {}
   persistence:
-    storageClass: gluster-heketi
+    storageClass: local-gluster-heketi
 
 
 # Define which registries and repositories you want available in your
@@ -109,7 +109,7 @@ redis:
     enabled: false
   master:
     persistence:
-      storageClass: gluster-heketi
+      storageClass: local-gluster-heketi
 # Uncomment if you don't want to create a PVC for redis
 #  master:
 #    persistence:
@@ -126,7 +126,7 @@ minio:
   bucket: "spinnaker"
   nodeSelector: {}
   persistence:
-    storageClass: gluster-heketi
+    storageClass: local-gluster-heketi
 # Uncomment if you don't want to create a PVC for minio
 #  persistence:
 #    enabled: false
