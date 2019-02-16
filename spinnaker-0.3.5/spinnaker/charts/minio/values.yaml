@@ -15,7 +15,7 @@ accessKey: "AKIAIOSFODNN7EXAMPLE"
 secretKey: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 configPath: ""
 mountPath: "/export"
-replicas: 4
+replicas: 1
 
 ## loadBalancerIP for the Minio Service (optional, cloud specific)
 ## ref: http://kubernetes.io/docs/user-guide/services/#type-loadbalancer

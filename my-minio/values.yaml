@@ -1,0 +1,10 @@
+
+
+accessKey: "minio"
+secretKey: "minio123"
+
+image: minio/minio
+tag: RELEASE.2017-05-05T01-14-51Z
+
+nameOverride: tming
+

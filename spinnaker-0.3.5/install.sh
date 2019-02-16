@@ -5,3 +5,6 @@ helm install -n my-spinnaker stable/spinnaker --set serviceType=NodePort --timeo
 kubectl delete pods --all -n spinnaker --force --grace-period=0
 
 helm install -n my-spinnaker stable/spinnaker --timeout 36000  --version 0.3.5 --namespace spinnaker
+
+
+helm install -n my-spinnaker --timeout 36000  --version 0.3.5 --namespace spinnaker ./spinnaker

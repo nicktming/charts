@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: minio-deployment
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}-pvc
+      containers:
+      - name: minio
+        image: {{ .Values.image }}:{{ .Values.tag }}
+        args:
+        - server
+        - /data
+        env:
+        - name: MINIO_ACCESS_KEY
+          value: {{ .Values.accessKey }}
+        - name: MINIO_SECRET_KEY
+          value: {{ .Values.secretKey }}
+        ports:
+        - containerPort: 9000
+        volumeMounts:
+        - name: data
+          mountPath: "/data"
